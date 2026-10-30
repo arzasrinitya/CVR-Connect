@@ -1,0 +1,372 @@
+
+/* ===== Global Styles ===== */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f3f5fb;
+    color: #29344b;
+    line-height: 1.6;
+}
+
+/* ===== Header and Navigation ===== */
+header {
+    background: linear-gradient(120deg, #176b45, #087f8c, #354a9a);
+    color: white;
+    text-align: center;
+    padding: 28px 15px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 36px;
+    letter-spacing: 1px;
+}
+
+header p {
+    margin: 5px 0 15px;
+    color: #e0f7f4;
+}
+
+nav a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    margin: 5px 10px;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: #ffd166;
+}
+
+/* ===== Main Layout ===== */
+main {
+    max-width: 1050px;
+    margin: auto;
+    padding: 22px;
+}
+
+.hero {
+    background: linear-gradient(120deg, #e0f7f1, #e7edff, #f5e8ff);
+    text-align: center;
+    border-radius: 16px;
+    padding: 35px 20px;
+    margin: 20px 0;
+    border: 1px solid #d8dfef;
+}
+
+.hero h2 {
+    color: #176b45;
+    font-size: 28px;
+}
+
+.hero p {
+    color: #46536b;
+}
+
+/* ===== Sections ===== */
+.section {
+    background: white;
+    margin: 24px 0;
+    padding: 25px;
+    border-radius: 14px;
+    border: 1px solid #e0e5ef;
+    box-shadow: 0 5px 18px #29344b12;
+}
+
+.section h2 {
+    color: #176b45;
+    border-bottom: 3px solid #b9e6d2;
+    padding-bottom: 8px;
+}
+
+/* Give each section a different accent color */
+#lost-found h2 {
+    border-color: #8bd3b3;
+}
+
+#verification h2 {
+    color: #6c45a8;
+    border-color: #d5c2f3;
+}
+
+#canteen h2 {
+    color: #087f8c;
+    border-color: #a7e5e5;
+}
+
+/* ===== Forms ===== */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 20px 0;
+}
+
+label {
+    font-weight: bold;
+    color: #35445e;
+    margin-top: 5px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #cbd4e3;
+    border-radius: 7px;
+    font: inherit;
+    background: #fbfcff;
+    color: #29344b;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #087f8c;
+    box-shadow: 0 0 0 3px #087f8c20;
+}
+
+textarea {
+    min-height: 85px;
+    resize: vertical;
+}
+
+/* ===== Buttons ===== */
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 7px;
+    background: #176b45;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    margin: 4px 4px 4px 0;
+    transition: transform 0.2s, filter 0.2s;
+}
+
+button:hover {
+    filter: brightness(1.08);
+    transform: translateY(-1px);
+}
+
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid #f4a261;
+    outline-offset: 3px;
+}
+
+/* Search filters */
+.filter-buttons button {
+    background: #354a9a;
+}
+
+.filter-buttons button[data-filter="Found"] {
+    background: #087f8c;
+}
+
+.filter-buttons button[data-filter="Lost"] {
+    background: #d97706;
+}
+
+/* ===== Private Verification Field ===== */
+.private-group {
+    padding: 15px;
+    background: #fff7e6;
+    border: 1px solid #f2cf8d;
+    border-left: 5px solid #e9a23b;
+    border-radius: 8px;
+}
+
+.private-group small {
+    display: block;
+    color: #79551c;
+}
+
+/* ===== Lost and Found Cards ===== */
+.item-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.item-card {
+    padding: 18px;
+    border: 1px solid #dfe6ef;
+    border-top: 4px solid #087f8c;
+    border-radius: 10px;
+    background: #ffffff;
+    overflow-wrap: anywhere;
+    box-shadow: 0 3px 10px #29344b0a;
+}
+
+.item-card h3 {
+    color: #354a9a;
+    margin-top: 0;
+}
+
+.item-type {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    background: #e0f7f1;
+    color: #176b45;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.item-card a {
+    display: inline-block;
+    margin: 8px 0;
+    color: #354a9a;
+    font-weight: bold;
+}
+
+.item-card button {
+    background: #6c45a8;
+}
+
+/* Claim form inside a card */
+.claim-form {
+    margin-top: 15px;
+    padding: 13px;
+    background: #f5f0ff;
+    border: 1px solid #d5c2f3;
+    border-radius: 8px;
+}
+
+.claim-form h4 {
+    color: #6c45a8;
+}
+
+/* ===== Ownership Verification ===== */
+.claim-card {
+    padding: 18px;
+    margin: 15px 0;
+    background: #faf7ff;
+    border: 1px solid #e1d5f5;
+    border-left: 5px solid #8b5cc7;
+    border-radius: 9px;
+    overflow-wrap: anywhere;
+}
+
+.claim-card h3 {
+    color: #6c45a8;
+    margin-top: 0;
+}
+
+.status {
+    font-weight: bold;
+}
+
+.pending {
+    color: #b7791f;
+}
+
+.approved {
+    color: #16804a;
+}
+
+.rejected {
+    color: #c0392b;
+}
+
+.claim-card button:first-of-type {
+    background: #16804a;
+}
+
+.claim-card button:last-of-type {
+    background: #c0392b;
+}
+
+.notice {
+    padding: 13px;
+    background: #fff7e6;
+    border-left: 4px solid #e9a23b;
+    border-radius: 5px;
+}
+
+/* ===== CanteenPulse ===== */
+.crowd-buttons button[data-crowd="Quiet"] {
+    background: #16804a;
+}
+
+.crowd-buttons button[data-crowd="Moderate"] {
+    background: #d97706;
+}
+
+.crowd-buttons button[data-crowd="Crowded"] {
+    background: #c0392b;
+}
+
+.crowd-result {
+    padding: 16px;
+    margin-top: 15px;
+    border-radius: 9px;
+    background: #e0f7f1;
+    color: #176b45;
+    border-left: 5px solid #16804a;
+    font-weight: bold;
+}
+
+.crowd-result.moderate {
+    background: #fff3d6;
+    color: #925b08;
+    border-color: #e9a23b;
+}
+
+.crowd-result.crowded {
+    background: #ffe7e7;
+    color: #a52727;
+    border-color: #c0392b;
+}
+
+/* ===== Footer ===== */
+footer {
+    padding: 22px;
+    background: linear-gradient(120deg, #263653, #354a9a);
+    color: white;
+    text-align: center;
+}
+
+footer p {
+    margin: 5px;
+}
+
+/* ===== Mobile Responsive Design ===== */
+@media (max-width: 600px) {
+    main {
+        padding: 10px;
+    }
+
+    .hero,
+    .section {
+        padding: 18px;
+    }
+
+    header h1 {
+        font-size: 29px;
+    }
+
+    nav a {
+        margin: 5px;
+    }
+
+    .item-grid {
+        grid-template-columns: 1fr;
+    }
+}

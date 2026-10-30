@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CVR Connect - Smart Campus Companion</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>CVR Connect</h1>
+    <p>Your Smart Campus Companion</p>
+    <nav>
+        <a href="#lost-found">Lost & Found</a>
+        <a href="#verification">Verify Claims</a>
+        <a href="#canteen">CanteenPulse</a>
+    </nav>
+</header>
+
+<main>
+    <section class="hero">
+        <h2>Welcome to CVR Connect!</h2>
+        <p>Find lost belongings, verify ownership, and check canteen crowd levels.</p>
+    </section>
+
+    <section id="lost-found" class="section">
+        <h2>CVR Lost & Found</h2>
+        <p>Report an item or search for a lost belonging.</p>
+
+        <form id="itemForm">
+            <label for="itemName">Item Name</label>
+            <input id="itemName" type="text" placeholder="e.g. Water bottle" required>
+
+            <label for="itemType">Report Type</label>
+            <select id="itemType" required>
+                <option value="Lost">Lost Item</option>
+                <option value="Found">Found Item</option>
+            </select>
+
+            <label for="itemLocation">Location</label>
+            <input id="itemLocation" type="text"
+                   placeholder="e.g. Library" required>
+
+            <label for="itemDescription">Public Description</label>
+            <textarea id="itemDescription"
+                      placeholder="Describe the item without revealing private proof"
+                      required></textarea>
+
+            <label for="itemContact">Contact Email</label>
+            <input id="itemContact" type="email"
+                   placeholder="Your college email" required>
+
+            <div id="privateDetailGroup" class="private-group">
+                <label for="privateDetail">
+                    Private Verification Detail
+                </label>
+                <input id="privateDetail" type="text"
+                       placeholder="A unique mark or detail only the owner should know">
+                <small>
+                    Do not include this detail in the public description.
+                    In this demo, it is used for claim review.
+                </small>
+            </div>
+
+            <button type="submit">Submit Item</button>
+        </form>
+
+        <label for="searchInput">Search Items</label>
+        <input id="searchInput" type="text"
+               placeholder="Search by item or location">
+
+        <div class="filter-buttons">
+            <button type="button" data-filter="All">All Items</button>
+            <button type="button" data-filter="Lost">Lost Items</button>
+            <button type="button" data-filter="Found">Found Items</button>
+        </div>
+
+        <div id="itemList" class="item-grid"></div>
+    </section>
+
+    <section id="verification" class="section">
+        <h2>Ownership Verification</h2>
+        <p>
+            Review claims and compare the claimant's evidence with the
+            private identifying detail before approving a handover.
+        </p>
+        <p class="notice">
+            Demo only: claims and decisions are stored in this browser session.
+            This is not a secure college verification system.
+        </p>
+        <div id="claimList"></div>
+    </section>
+
+    <section id="canteen" class="section">
+        <h2>CVR CanteenPulse</h2>
+        <p>Report the current canteen crowd level.</p>
+
+        <div class="crowd-buttons">
+            <button type="button" data-crowd="Quiet">Quiet</button>
+            <button type="button" data-crowd="Moderate">Moderate</button>
+            <button type="button" data-crowd="Crowded">Crowded</button>
+        </div>
+
+        <div id="crowdResult" class="crowd-result">
+            No crowd reports yet.
+        </div>
+        <p id="reportCounts">Quiet: 0 | Moderate: 0 | Crowded: 0</p>
+    </section>
+</main>
+
+<footer>
+    <p>CVR Connect | Smart Campus Companion</p>
+    <p>Academic prototype project</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
